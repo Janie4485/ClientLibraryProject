@@ -1,0 +1,223 @@
+* {
+    font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+}
+
+#client-form {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #88888878;
+}
+
+#client-form form {
+    background-color: white;
+    border: solid #C0EFBC;
+    width: 300px;
+    padding: 20px;
+}
+
+#client-form h2 {
+    margin-top: 0;
+}
+
+#client-form label {
+    display: block;
+}
+
+#client-form form > * {
+    margin-bottom: 5px;
+}
+
+h4 {
+    margin-bottom: 0;
+}
+
+#edit-client-form {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: #88888878;
+}
+
+#edit-client-form form {
+    background-color: white;
+    border: solid #C0EFBC;
+    width: 300px;
+    padding: 20px;
+}
+
+#edit-client-form h2 {
+    margin-top: 0;
+}
+
+#edit-client-form label {
+    display: block;
+}
+
+#edit-client-form form > * {
+    margin-bottom: 5px;
+}
+
+/*#ek6-name-h1 {
+	 top: 2000;
+    left: 0;
+    width: 1000;
+    height: 1000;
+    z-index: 10;
+    background-color: #BAF4E3
+}*/
+
+#ek6-name-h1 {
+            font-size: 2em; /* Размер шрифта */
+            font-weight: bold; /* Жирный шрифт */
+            text-align: center; /* Центрирование текста */
+            color: #333; /* Цвет текста */
+            margin: 20px 0; /* Отступы сверху и снизу */
+            padding: 10px; /* Внутренние отступы */
+            background-color: #f9f9f9; /* Фоновый цвет */
+            border: 1px solid #ccc; /* Граница */
+            border-radius: 5px; /* Скругленные углы */
+        }
+
+        #ek6-name-h1 span {
+            color: #007bff; /* Цвет текста */
+            font-weight: normal; /* Обычный вес шрифта */
+            font-size: 0.9em; /* Размер шрифта */
+        }
+
+/*#show-add-client-form {
+	 top: 2200;
+    left: 50;
+    width: 100;
+    height: 100;
+    z-index: 10;
+    background-color: #88888878
+    border-radius: 5px; *//* Скругленные углы *//*
+}
+
+
+
+/* Общие стили для кнопок */
+.button-common {
+    width: 100px;
+    height: 40px;
+    z-index: 10;
+    background-color: #88888878;
+    border-radius: 5px; /* Скругленные углы */
+    border: none; /* Удаляем границу */
+    color: #fff; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer; /* Указатель мыши в виде руки */
+    display: flex; /* Используем flex для центрирования текста */
+    align-items: center; /* Центрируем текст по вертикали */
+    justify-content: center; /* Центрируем текст по горизонтали */
+    transition: background-color 0.3s; /* Плавное изменение фона */
+}
+
+/* Индивидуальные стили для кнопок */
+#show-add-client-form {
+    position: absolute; /* Позиционирование */
+    top: 100px; /* Позиция сверху */
+    left: 50px; /* Позиция слева */
+}
+
+/* Стили при наведении */
+.button-common:hover {
+    background-color: #66666678;
+}
+
+
+#clientinfo-form {
+    display: none;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background-color: #88888878;
+}
+#clientinfo-form form {
+    background-color: white;
+    border: solid #C0EFBC;
+    width: 300px;
+    padding: 20px;
+}
+
+#clientinfo-form h2 {
+    margin-top: 0;
+}
+
+
+#clientinfo-form form > * {
+    margin-bottom: 5px;
+}
+/*CLIENT LIST*/
+
+#client-list {
+    margin: 20px auto;
+    max-width: 800px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.client-item {
+    display: table-row;
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.client-item:hover {
+    background-color: #f1f1f1;
+}
+
+.client-item a {
+    display: table-cell;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+}
+
+.client-item a:last-child {
+    border-right: none; /* Удаляем правую границу у последней ячейки */
+}
+
+.client-item a:hover {
+    text-decoration: underline;
+}
+
+.client-actions {
+    display: table-cell;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+}
+
+/* Стили для заголовка таблицы */
+.client-header {
+    display: table-header-group;
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+.client-header div {
+    display: table-cell;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
