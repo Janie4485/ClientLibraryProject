@@ -1,37 +1,21 @@
 $(function(){
 
 function appendClient(client) {
-    // Создаем новый элемент клиента
     var clientItem = $('<div class="client-item"></div>');
-
-    // Добавляем имя клиента
     var clientName = $('<a href="#" class="client-link"></a>')
         .attr('data-id', client.id)
         .text(client.name);
 
-    // Добавляем номер договора
     var clientContractNumber = $('<a href="#" class="client-link"></a>')
         .attr('data-id', client.id)
         .text(client.hetonghao);
-
-    // Создаем контейнер для действий
     var clientActions = $('<div class="client-actions"></div>');
-
-    // Добавляем ссылку на редактирование
     var editLink = $('<a href="#" class="edit-client-link">Редактировать</a>')
         .attr('data-id', client.id);
-
-    // Добавляем ссылку на удаление
     var deleteLink = $('<a href="#" class="delete-client-link">Удалить</a>')
         .attr('data-id', client.id);
-
-    // Добавляем ссылки в контейнер для действий
     clientActions.append(editLink).append(deleteLink);
-
-    // Добавляем все элементы в новый элемент клиента
     clientItem.append(clientName).append(clientContractNumber).append(clientActions);
-
-    // Добавляем новый элемент клиента в список
     $('#client-list').append(clientItem);
 };
 //Show adding client form
@@ -46,7 +30,6 @@ function appendClient(client) {
         });
 
 //Show edit client form
-
         $(document).on('click', '.edit-client-link', function(e) {
             e.preventDefault();
 
@@ -132,7 +115,7 @@ $(document).on('click', '.client-link', function() {
 
 //Deleting client
 $(document).on('click', '.delete-client-link', function(e) {
-    e.preventDefault(); // Предотвращаем переход по ссылке
+    e.preventDefault();
 
     var link = $(this);
     var clientID = link.data('id');
@@ -144,7 +127,7 @@ $(document).on('click', '.delete-client-link', function(e) {
                 method: "DELETE",
                 success: function(response) {
                     alert('Клиент удален!');
-                    // Удалить клиента из списка
+
                     link.closest('.client-item').remove();
                 },
                 error: function(xhr, status, error) {
@@ -158,7 +141,7 @@ $(document).on('click', '.delete-client-link', function(e) {
 });
 //Edit client
 $('#reset').submit(function(e) {
-                e.preventDefault(); // Предотвращаем стандартное поведение формы
+                e.preventDefault();
 
                 var clientID = $('#edit-client-id').val();
                 var clientData = {
@@ -176,7 +159,7 @@ $('#reset').submit(function(e) {
                     success: function(response) {
                         alert('Данные клиента обновлены');
                         $('#edit-client-form').css('display', 'none');
-                        // Обновите данные клиента в списке на странице
+
                         $('a.client-link[data-id="' + clientID + '"]').filter(':first').text(response.name);
                         $('a.client-link[data-id="' + clientID + '"]').filter(':last').text(response.hetonghao);
                     },
@@ -187,43 +170,10 @@ $('#reset').submit(function(e) {
                 });
             });
 
-/*
-$(document).ready(function() {
-    $('#reset').click(function(event){
-    var data =$('#edit-client-form form').serializeArray();
-    var clientData = {};
-    var clientID = link.data('id');
-    data.forEach(function(item) {
-                clientData[item.name] = item.value;
-            });
-            $.ajax({
-                        method: "PUT",
-                        url: '/clients/' + clientID,
-                        contentType: "application/json",
-                        data: JSON.stringify(clientData),
-                        success: function(response) {
-                            $('#edit-client-form').css('display', 'none');
-
-                            var client = {};
-                            client.id = response.id;
-                            client.name = response.name;
-                            client.hetonghao = response.hetonghao;
-                            client.manager = response.manager;
-                        },
-                        error: function(xhr, status, error) {
-                            alert('Произошла ошибка при сохранении клиента: ' + xhr.responseText);
-                            console.error('Ошибка: ', xhr, status, error);
-                        }
-
-            });
-    });
-});
-*/
-
 //Adding new clint
 $(document).ready(function() {
     $('#save-client').click(function(event) {
-        event.preventDefault(); // Предотвращаем стандартное поведение кнопки
+        event.preventDefault();
 
         var data = $('#client-form form').serializeArray();
         var clientData = {};
@@ -234,8 +184,8 @@ $(document).ready(function() {
         $.ajax({
             method: "POST",
             url: '/clients/',
-            contentType: "application/json", // Устанавливаем тип содержимого
-            data: JSON.stringify(clientData), // Преобразуем данные в формат JSON
+            contentType: "application/json",
+            data: JSON.stringify(clientData),
             success: function(response) {
                 $('#client-form').css('display', 'none');
 
@@ -252,9 +202,8 @@ $(document).ready(function() {
             }
         });
 
-        return false; // Предотвращаем отправку формы
+        return false;
     });
-
 
 });
 
